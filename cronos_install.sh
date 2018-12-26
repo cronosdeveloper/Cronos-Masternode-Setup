@@ -27,7 +27,7 @@ function download_node() {
   wget -q $COIN_TGZ
   compile_error
   tar xvzf $COIN_ZIP --strip 1 >/dev/null 2>&1
-  cd cronos-1.0.0/bin/ >/dev/null 2>&1
+  cd bin/ >/dev/null 2>&1
   chmod +x * >/dev/null 2>&1
   mv $COIN_DAEMON $COIN_CLI $COIN_PATH >/dev/null 2>&1
   cd $(OLD_DIR) >/dev/null 2>&1
