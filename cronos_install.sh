@@ -1,16 +1,16 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='BitcoinAdult.conf'
-CONFIGFOLDER='/root/.BitcoinAdult'
-COIN_DAEMON='BitcoinAdultd'
-COIN_CLI='BitcoinAdult-cli'
+CONFIG_FILE='cronos.conf'
+CONFIGFOLDER='/root/.cronos'
+COIN_DAEMON='cronosd'
+COIN_CLI='cronos-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/BitcoinAdult/Bitcoin-Adult-Source-Code-v.1.1.0.0---New-Code/releases/download/v.1.1.0.0/BitcoinAdult.v.1.1.0.0.Linux.zip'
+COIN_TGZ='https://github.com/cronosdeveloper/Cronos/releases/download/v1.0.0.0/cronos-1.0.0-x86_64-linux-gnu.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='BitcoinAdult'
-COIN_PORT=8120
-RPC_PORT=8119
+COIN_NAME='Cronos'
+COIN_PORT=31304
+RPC_PORT=31301
 
 NODEIP=$(curl -s4 api.ipify.org)
 
@@ -26,8 +26,8 @@ function download_node() {
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_TGZ
   compile_error
-  unzip -x $COIN_ZIP >/dev/null 2>&1
-  cd BitcoinAdult_v1.1.0.0_Linux_16.04x64/BitcoinAdult_v1.1.0.0_Linux_16.04x64 >/dev/null 2>&1
+  tar xvzf $COIN_ZIP --strip 1 >/dev/null 2>&1
+  cd cronos-1.0.0/bin/ >/dev/null 2>&1
   chmod +x * >/dev/null 2>&1
   mv $COIN_DAEMON $COIN_CLI $COIN_PATH >/dev/null 2>&1
   cd $(OLD_DIR) >/dev/null 2>&1

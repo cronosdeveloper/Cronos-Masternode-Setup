@@ -1,21 +1,21 @@
-# BitcoinAdult Coin
-Shell script to install a [BitcoinAdult Masternode]() on a Linux server running Ubuntu 16.04.
+# Cronos Coin
+Shell script to install a [Cronos Masternode]() on a Linux server running Ubuntu 16.04.
 Use it on your own risk.
 ***
 
 ## VPS installation
 ```
-wget -N https://raw.githubusercontent.com/zoldur/BitcoinAdult/master/bitcoinadult_install.sh
-bash bitcoinadult_install.sh
+wget -N https://raw.githubusercontent.com/cronosdeveloper/cronos-masternode-setup/master/cronos_install.sh
+bash cronos_install.sh
 ```
 ***
 
 ## Desktop wallet setup
 
 After the Masternode is up and running, you need to configure the desktop wallet accordingly. Here are the steps:
-1. Open the BitcoinAdult Desktop Wallet.
+1. Open the Cronos Desktop Wallet.
 2. Go to RECEIVE and create a New Address: **MN1**
-3. Send **25000** BTAD to **MN1**. You need to send all 25000 coins in one single transaction.
+3. Send **15000** CRS to **MN1**. You need to send all 15000 coins in one single transaction.
 4. Wait for 15 confirmations.
 5. Go to **Help -> "Debug Window - Console"**
 6. Type the following command: **masternode outputs**
@@ -39,28 +39,28 @@ startmasternode alias 0 MN1
 ```
 14. Login to your VPS and check your masternode status by running the following command to confirm your MN is running:
 ```
-BitcoinAdult-cli masternode status
+cronos-cli masternode status
 ```
 ***
 
 ## Usage:
 ```
-BitcoinAdult-cli masternode status #To check your MN status
-BitcoinAdult-cli getinfo #To get general info such as BitcoinAdult version and current block numnber
-BitcoinAdult-cli mnsync status #To check if your MN is synced.
+cronos-cli masternode status #To check your MN status
+cronos-cli getinfo #To get general info such as Cronos version and current block numnber
+cronos-cli mnsync status #To check if your MN is synced.
 ```
-Also, if you want to check/start/stop **BitcoinAdult**, run one of the following commands as **root**:
+Also, if you want to check/start/stop **Cronos**, run one of the following commands as **root**:
 
 ```
-systemctl status BitcoinAdult #To check if BitcoinAdult service is running
-systemctl start BitcoinAdult #To start BitcoinAdult service
-systemctl stop BitcoinAdult #To stop BitcoinAdult service
-systemctl is-enabled BitcoinAdult #To check if BitcoinAdult service is enabled on boot
+systemctl status Cronos #To check if Cronos service is running
+systemctl start Cronos #To start Cronos service
+systemctl stop Cronos #To stop Cronos service
+systemctl is-enabled Cronos #To check if Cronos service is enabled on boot
 ```
 ***
 
 
-## Donations
+## Donations 
 Any donation is highly appreciated
 
 **BTC**: 3MQLEcHXVvxpmwbB811qiC1c6g21ZKa7Jh  
